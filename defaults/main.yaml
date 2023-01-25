@@ -1,0 +1,17 @@
+---
+java_install_packages:
+  - java-17-openjdk
+
+java_uninstall_packages:
+  - java-1.8.0-openjdk
+  - java-1.8.0-openjdk-headless
+  - java-11-openjdk
+  - java-11-openjdk-headless
+  - java-latest-openjdk
+  - java-latest-openjdk-headless
+
+jmx_exporter_version: 0.17.2
+jmx_exporter_archive: jmx_prometheus_javaagent-{{ jmx_exporter_version }}
+jmx_exporter_checksum: sha512:26ce9bfae04be23bd41c5e7b97fe2e6b98bf3311734523974c6ea9790bf9f7328fd6ec3a031f0ab7cc77f8a62bcb8bc980de0ac2cebd88d495ec375b8c038bc8
+jmx_exporter_url: https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/{{ jmx_exporter_version }}/{{ jmx_exporter_archive }}.jar
+jmx_exporter_path: /usr/lib/jvm/{{ jmx_exporter_archive }}.jar
