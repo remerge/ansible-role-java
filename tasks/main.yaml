@@ -1,0 +1,29 @@
+---
+- name: Install prefered Java
+  ansible.builtin.dnf:
+    name: "{{ java_install_packages }}"
+    state: present
+  register: java_install_changed
+
+- name: Set java_install_changed
+  set_fact:
+    java_install_changed: "{{ java_install_changed }}"
+
+- name: Uninstall older Java
+  ansible.builtin.dnf:
+    name: "{{ java_uninstall_packages }}"
+    state: absent
+
+- name: Download JMX exporter
+  ansible.builtin.get_url:
+    url: "{{ jmx_exporter_url }}"
+    dest: "{{ jmx_exporter_path }}"
+    checksum: "{{ jmx_exporter_checksum }}"
+    owner: root
+    group: root
+    mode: 0644
+  register: jmx_exporter_changed
+
+- name: Set jmx_exporter_changed
+  set_fact:
+    jmx_exporter_changed: "{{ jmx_exporter_changed }}"
