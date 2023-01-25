@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: remerge
+  role_name: java
+  description: Install Java with Ansible.
+  license: apache-2.0
+  company: remerge.io
+  min_ansible_version: "2.10"
+
+  platforms:
+    - name: EL
+      versions:
+        - "8"
+        - "9"
+
+  galaxy_tags:
+    - java
