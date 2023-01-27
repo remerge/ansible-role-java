@@ -91,7 +91,7 @@ repos:
 
   # https://github.com/bridgecrewio/checkov/tags
   - repo: https://github.com/bridgecrewio/checkov
-    rev: "2.2.295"
+    rev: "2.2.304"
     hooks:
       - id: checkov
         name: checkov
@@ -99,6 +99,6 @@ repos:
 
   # https://github.com/jorisroovers/gitlint/tags
   - repo: https://github.com/jorisroovers/gitlint
-    rev: "v0.18.0"
+    rev: "v0.19.0dev"
     hooks:
       - id: gitlint

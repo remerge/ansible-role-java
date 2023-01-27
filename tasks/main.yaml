@@ -6,7 +6,7 @@
   register: java_install_changed
 
 - name: Set java_install_changed
-  set_fact:
+  ansible.builtin.set_fact:
     java_install_changed: "{{ java_install_changed }}"
 
 - name: Uninstall older Java
@@ -25,5 +25,5 @@
   register: jmx_exporter_changed
 
 - name: Set jmx_exporter_changed
-  set_fact:
+  ansible.builtin.set_fact:
     jmx_exporter_changed: "{{ jmx_exporter_changed }}"
